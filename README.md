@@ -1,6 +1,6 @@
 # Neural Splitting with Dice Roll in Pytorch
 ## Introduction
-This demonstrates a dynamic neural splitting module implemented in Pytorch and combined with a "best of n" starting parameters. 
+This demonstrates a dynamic neural splitting module implemented in Pytorch* and combined with a "best of n" starting parameters. 
 
 ## License and Warranties
 Use of this code for educational research or projects of a personal nature is permitted without warranty.
@@ -12,3 +12,8 @@ Any display of this code should reference at the top an "https" link to this Git
 If you are interested in a license of this code for commercial - use, research and/or development, please contact me at therealjjj77"@"yahoo"."com (remove the quotes).
 
 ## Summary of Files
+Example files implementing Neural Splitting with Dice Roll for CPU and GPU are in the main directory. 
+
+NN-Definitions.py is a copy of the custom code that makes up the Neural Splitting with Dice Roll. 
+
+Research folder contains research done on the Neural Splitting and Dice Roll algorithms. 
