@@ -17,3 +17,5 @@ Example files implementing Neural Splitting with Dice Roll for CPU and GPU are i
 NN-Definitions.py is a copy of the custom code that makes up the Neural Splitting with Dice Roll. 
 
 Research folder contains research done on the Neural Splitting and Dice Roll algorithms. 
+
+*I am not in any way affiliated with Pytorch or Facebook.
