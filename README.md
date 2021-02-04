@@ -5,7 +5,7 @@ This demonstrates a dynamic neural splitting module implemented in Pytorch and c
 ## License and Warranties
 Use of this code for noncommercial research or projects of a personal nature is permitted without warranty.
 
-Modifications or derivatives of this code are prohibited. 
+Modifications or derivatives of this code for commercial use are prohibited. 
 
 If you are interested in a license of this code for commercial - use, research and/or development, please contact me at therealjjj77"@"yahoo"."com (remove the quotes).
 
