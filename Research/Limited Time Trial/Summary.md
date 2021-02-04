@@ -29,7 +29,12 @@ Notes: In all cases, loss and accuracy were still improving at the 7 minute mark
 The average accuracy of the Neural Splitting with Dice Roll test group was 11.93% higher while the average loss was 17.86% lower(lower loss corresponds to better fitting of the data). In every instance, the Test Group performed signficantly higher than the Control Group. Occasionally when training, a network starts off with a less than ideal set of parameters and either takes a lot longer to train to peak accuracy or never acheives anywhere close to the best training outcome, getting stuck in local minima. The Roll Dice algorithm solves this problem by choosing the best starting parameters from a set n, as specified by the data scientist. This reduces the likelihood of a bad start, as demonstrated in the Control Group on run #8.
 Neural Splitting and Dice Roll algorithms can help to greatly increase the results given a limited budget for training. 
 
-(See figure for complete results)
+(See Results Table below for complete results)
+
+Results Table: https://github.com/CerebralSeed/Neural-Splitting-with-Dice-Roll/blob/main/Research/Limited%20Time%20Trial/SN%20with%20Dice%20Roll.jpg
+Test Group Code: https://github.com/CerebralSeed/Neural-Splitting-with-Dice-Roll/blob/main/Research/Limited%20Time%20Trial/Test-Group-wgpu.py
+Control Group Code: https://github.com/CerebralSeed/Neural-Splitting-with-Dice-Roll/blob/main/Research/Limited%20Time%20Trial/Control-Group-wgpu.py
+
 
 ## Additional Comments
 While this demonstrates how these algorithms may help researchers and companies with limited budgets obtain better results, this does not demonstrate whether these algorithms are better for someone who has an unlimited budget and time to train a network. So the next research experiment will be to demonstrate how these algorithms perform when allowed to train to a best fit vs. a control group of the same parameter size.
