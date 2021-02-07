@@ -32,7 +32,9 @@ Neural Splitting and Dice Roll algorithms can help to greatly increase the resul
 (See Results Table below for complete results)
 
 Results Table: https://github.com/CerebralSeed/Neural-Splitting-with-Dice-Roll/blob/main/Research/Limited%20Time%20Trial/SN%20with%20Dice%20Roll.jpg
+
 Test Group Code: https://github.com/CerebralSeed/Neural-Splitting-with-Dice-Roll/blob/main/Research/Limited%20Time%20Trial/Test-Group-wgpu.py
+
 Control Group Code: https://github.com/CerebralSeed/Neural-Splitting-with-Dice-Roll/blob/main/Research/Limited%20Time%20Trial/Control-Group-wgpu.py
 
 
