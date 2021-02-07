@@ -1,5 +1,5 @@
 This contains files related to the Unlimited Time Trial.
-# Limited Time Trial
+# Unlimited Time Trial
 ## Abstract
 We tested the Neural Splitting with Dice Roll algorithms, allowing the network acheive peak validation accuracy. We find that Neural Splitting with Dice Roll acheived an average of 4.79% increase in accuracy and a 12.01% decrease in loss over the control group on the CIFAR 10 dataset. The best results were acheived on average in 47.25% less time than the control group. 
 
