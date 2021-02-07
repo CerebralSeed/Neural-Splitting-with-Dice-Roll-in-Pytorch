@@ -38,6 +38,7 @@ Control Group Code: https://github.com/CerebralSeed/Neural-Splitting-with-Dice-R
 
 ## Additional Comments
 While this demonstrates how these algorithms may help researchers and companies acheive better results with neuron splitting with dice roll, tests need to be performed on smaller network sizes more appropriate to the CIFAR10 dataset. Those will be next.
+
 During the training, we noticed that the number of neurons in the first hidden layer were much more likely to split. Given this, we reviewed the accumulated gradient function and found that the magnitude of the losses should be accumulated and not their raw value. After making this adjustment, we performed a histogram of the adjusted values and found this conforms closely to a log normal distribution. Due to this, we adjusted the function targeting which neurons to split. Going forward, neurons will be split based on the mean of the average of the magnitudes, multiplied by (1+cutoff). This change results in much quicker convergence on best validation accuracy and lowest loss. This updated function will be used in the next test evaluating smaller networks.  
 
 
