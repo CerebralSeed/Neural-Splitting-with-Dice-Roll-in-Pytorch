@@ -1,4 +1,4 @@
-# v1.034
+# v1.035
 #DO NOT REMOVE - If you copy or use any part of this file, please note the license and warranty conditions found here: https://github.com/CerebralSeed/Neural-Splitting-with-Dice-Roll-in-Pytorch
 
 import torch
@@ -12,10 +12,10 @@ def model_reboot(model):
     if isinstance(model, nn.Conv2d) or isinstance(model, nn.Linear): model.reset_parameters()
 
 
-def roll_dice(model_class, criterion, optim, batches, trainloader, rolls=10):
+def roll_dice(model_class, criterion, optim, batches, trainloader, device=None, rolls=10):
     best_params = []
     best_loss = 0
-    model = model_class
+    model = model_class.to(device)
     for epoch in range(rolls):  # test "roll" number of randomized parameter vectors
 
         model.apply(model_reboot)
@@ -23,7 +23,7 @@ def roll_dice(model_class, criterion, optim, batches, trainloader, rolls=10):
         sumloss = 0.0
         for i, data in enumerate(trainloader, 0):
             # get the inputs; data is a list of [inputs, labels]
-            inputs, labels = data[0], data[1]
+            inputs, labels = data[0].to(device), data[1].to(device)
             # zero the parameter gradients
             opts.zero_grad()
             # forward + backward + optimize
@@ -34,21 +34,21 @@ def roll_dice(model_class, criterion, optim, batches, trainloader, rolls=10):
 
             sumloss += loss.item()
             if i % batches == batches - 1:
-                print(str(epoch) + ' - ' + ' Checking for better parameters...')
-                if best_loss == 0:
-                    for layer in model.parameters():
-                        best_params.append(layer)
-                    print('Initializing loss from ' + str(best_loss / batches) + ' -----> ' + str(sumloss / batches))
-                    best_loss = sumloss
-                if best_loss > sumloss:
-                    for layer, layer2 in zip(model.parameters(), best_params):
-                        layer2 = layer
-                    print('Updating loss from ' + str(best_loss / batches) + ' -----> ' + str(sumloss / batches))
-                    best_loss = sumloss
                 break
+        print(str(epoch) + ' - ' + ' Checking for better parameters...')
+        if best_loss == 0:
+            for layer in model.parameters():
+                best_params.append(layer)
+            print('Initializing loss from ' + str(best_loss / batches) + ' -----> ' + str(sumloss / batches))
+            best_loss = sumloss
+        if best_loss > sumloss:
+            for layer, layer2 in zip(model.parameters(), best_params):
+                layer2 = layer
+            print('Updating loss from ' + str(best_loss / batches) + ' -----> ' + str(sumloss / batches))
+            best_loss = sumloss
     for layer, layer2 in zip(best_params, model.parameters()):
         layer2 = layer
-    return model
+    return model.to(device)
 
 
 def split(w1, b1, w2, grad, cutoffadd, cutoffrem):
