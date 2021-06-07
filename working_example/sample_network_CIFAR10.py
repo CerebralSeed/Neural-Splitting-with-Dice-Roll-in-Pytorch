@@ -72,12 +72,11 @@ criterion = nn.CrossEntropyLoss()
 net = Net()
 optimizer = optim.Adam(net.parameters(), lr=0.001)
 
-net = sn.roll_dice(net, criterion, optim=optimizer, batches=10, rolls=30, trainloader=trainloader)
+net = sn.roll_dice(net, criterion, optim=optimizer, batches=10, rolls=30, trainloader=trainloader, device=device)
 # Optional: gets best random starting parameters - avoid bad starts
 # batches specifies the number of batches to test, set to an amount 1% or less of total samples, shuffling data is recommended
 # rolls is how many rolls to try, set between 10 and 100. Each additional roll decreases the probability of finding better starting parameters
 # optimizer type should be specified
-
 net.to(device)
 
 for epoch in range(15):  # loop over the dataset multiple times
