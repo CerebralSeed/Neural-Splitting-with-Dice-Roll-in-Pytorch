@@ -31,7 +31,7 @@ If we started with a smaller set of parameters, how could we go about increasing
 ![Vector Dot Product Identity](https://github.com/CerebralSeed/Neural-Splitting-with-Dice-Roll-in-Pytorch/blob/main/matrix-dot-identity2.png)
 (Feel free to check this for yourself in a spreadsheet.)
 
-Matrix multiplication, as used in neural networks, is just a multiplication of many individual vectors. If we want to split neurons without disrupting the networks progress, we need to simply clone the target biases, clone the weights before those biases, and take the weights after the target biases and clone and divide these by two. I've attached a simple example in a spreadsheet, so one can easily verify that this method works in preserving the output. Please find that here:
+Matrix multiplication, as used in neural networks, is just a multiplication of many individual vectors. If we want to split neurons without disrupting the networks progress, we need to simply clone the target biases, clone the weights before those biases, and take the weights after the target biases and clone and divide these by the number of splits on that neuron. I've attached a simple example in a spreadsheet, so one can easily verify that this method works in preserving the output. Please find that here:
 
 https://github.com/CerebralSeed/Neural-Splitting-with-Dice-Roll-in-Pytorch/blob/main/neural-network-granularity.xls
 
