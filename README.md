@@ -1,6 +1,6 @@
 # Neural Splitting with Dice Roll in Pytorch
 ## Introduction
-This demonstrates a dynamic neural splitting module implemented in Pytorch* and combined with a "best of n" starting parameters. 
+This demonstrates a dynamic neural splitting module implemented in Pytorch and combined with a "best of n" starting parameters. 
 
 ## Summary of Files
 Example files implementing Neural Splitting with Dice Roll for CPU and GPU are in the main directory. 
@@ -9,7 +9,6 @@ NN-Definitions.py is a copy of the custom code that makes up the Neural Splittin
 
 Research folder contains research done on the Neural Splitting and Dice Roll algorithms. 
 
-*I am not in any way affiliated with Pytorch or Facebook.
 
 ## Motivation for Neuron Splitting
 Consider the Island Problem: we find ourselves on an island in the ocean and the only way off the island is to find the lowest point. However, there is a dense fog so we can't see very far. But we have a flat XY map of the island boundaries and can instantly teleport anywhere we desire within those boundaries. How could we quickly find the lowest point on the island? 
